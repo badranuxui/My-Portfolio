@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  /* Artistic Flair themed palette */
+  --color-sand-50: #FDFCFB;
+  --color-sand-100: #F9F8F6;
+  --color-sand-200: #F2EEE9;
+  --color-sand-300: #EAE7E1;
+  --color-sand-400: #D6D1C7;
+  --color-sand-500: #B5AEA1;
+  --color-sand-600: #8B8B7A;
+  --color-sand-700: #6B6B5E;
+  --color-sand-800: #4A4A41;
+  --color-sand-900: #2D2D2D;
+  --color-sand-950: #1C1C17;
+
+  --color-accent-50: #FAF9F6;
+  --color-accent-100: #F5F2EE;
+  --color-accent-200: #EAE7E1;
+  --color-accent-300: #D6D1C7;
+  --color-accent-400: #B5AEA1;
+  --color-accent-500: #8B8B7A;
+  --color-accent-600: #6B6B5E;
+  --color-accent-700: #4A4A41;
+  --color-accent-800: #2D2D2D;
+  --color-accent-900: #1C1C17;
+  --color-accent-950: #0E0E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDFCFB;
+  color: #2D2D2D;
+  direction: rtl; /* Set default text direction to Right-to-Left */
+}
+
+/* Elegant selection colors */
+::selection {
+  background-color: #EAE7E1;
+  color: #2D2D2D;
+}
+
+/* Custom fine scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFCFB;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAE7E1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D6D1C7;
+}
