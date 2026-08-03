@@ -128,11 +128,11 @@ export default function App() {
 
           {/* أزرار التنقل السريع للأجهزة المكتبية (Desktop Links) */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium opacity-70" id="desktop-nav">
-            <a href="#home" className="hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200">الرئيسية</a>
-            <a href="#about" className="hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200">نبذة عني</a>
-            <a href="#methodology" className="hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200">منهجية العمل</a>
-            <a href="#portfolio" className="hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200">مشاريعي</a>
-            <a href="#contact" className="hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200">تواصل معي</a>
+            <a href="#home" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">الرئيسية<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#about" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">نبذة عني<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#methodology" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">منهجية العمل<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#portfolio" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">مشاريعي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#contact" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">تواصل معي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
           </nav>
 
           {/* التسمية الفنية الجانبية والأجهزة المكتبية */}
@@ -140,14 +140,16 @@ export default function App() {
             <span className="text-[10px] font-mono text-[#8B8B7A] opacity-60 uppercase tracking-widest">
               {contactInfo.username} // 2026
             </span>
-            <a
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
               href={designerInfo.cvUrl}
-              className="px-5 py-2 text-xs font-semibold text-[#2D2D2D] border border-[#EAE7E1] rounded-xl hover:bg-[#F5F2EE] transition-all duration-300 inline-flex items-center gap-1.5"
+              className="px-5 py-2 text-xs font-semibold text-[#2D2D2D] border border-[#EAE7E1] rounded-xl hover:bg-[#F5F2EE] transition-colors duration-300 inline-flex items-center gap-1.5"
               id="nav-cv-button"
             >
               <FileText size={14} />
               <span>السيرة الذاتية</span>
-            </a>
+            </motion.a>
           </div>
 
           {/* زر القائمة للهواتف (Mobile Menu Toggle) */}
@@ -232,7 +234,7 @@ export default function App() {
             <div className="col-span-1 lg:col-span-4 flex flex-col">
               
               {/* بطاقة المصمم الملموسة الأنيقة */}
-              <div className="bg-white p-8 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col justify-between h-full text-right relative overflow-hidden group">
+              <div className="bg-white p-8 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col justify-between h-full text-right relative overflow-hidden group transition-all duration-300 hover:shadow-md">
                 
                 <div className="flex flex-col gap-5">
                   {/* شارة توفر العمل الفنية */}
@@ -270,19 +272,23 @@ export default function App() {
 
                 {/* أزرار التحميل والتواصل المباشرة */}
                 <div className="flex flex-col gap-2 mt-6">
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
                     href={designerInfo.cvUrl}
-                    className="bg-[#2D2D2D] text-white py-3 px-6 rounded-xl text-center text-xs font-semibold hover:bg-[#1C1C17] transition-all duration-300 inline-flex items-center justify-center gap-2"
+                    className="bg-[#2D2D2D] text-white py-3 px-6 rounded-xl text-center text-xs font-semibold hover:bg-[#1C1C17] transition-colors duration-300 inline-flex items-center justify-center gap-2"
                   >
                     <FileText size={14} />
                     <span>عرض السيرة الذاتية (CV)</span>
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
                     href="#contact"
-                    className="border border-[#EAE7E1] text-[#2D2D2D] py-2.5 px-6 rounded-xl text-center text-xs font-semibold hover:bg-[#F5F2EE] transition-all duration-300"
+                    className="border border-[#EAE7E1] text-[#2D2D2D] py-2.5 px-6 rounded-xl text-center text-xs font-semibold hover:bg-[#F5F2EE] transition-colors duration-300"
                   >
                     تواصل معي
-                  </a>
+                  </motion.a>
                 </div>
               </div>
 
@@ -319,7 +325,7 @@ export default function App() {
                     {skillsList.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="px-3.5 py-1.5 bg-[#FAF9F6] border border-[#F2EEE9] text-[10px] font-bold text-[#6B6B5E] rounded-lg transition-colors hover:border-[#8B8B7A]"
+                        className="px-3.5 py-1.5 bg-[#FAF9F6] border border-[#F2EEE9] text-[10px] font-bold text-[#6B6B5E] rounded-lg transition-all duration-200 hover:border-[#8B8B7A] hover:bg-[#F5F2EE] hover:text-[#2D2D2D] hover:-translate-y-0.5 cursor-default"
                       >
                         {skill}
                       </span>
@@ -357,7 +363,7 @@ export default function App() {
               {methodologySteps.map((step, idx) => {
                 const IconComponent = iconMap[step.iconName] || Search;
                 return (
-                  <div key={idx} className="flex flex-col gap-4 group">
+                  <div key={idx} className="flex flex-col gap-4 group p-4 -m-4 rounded-2xl transition-all duration-300 hover:bg-[#FAF9F6] hover:-translate-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-black italic text-[#8B8B7A] opacity-20 group-hover:opacity-60 transition-opacity font-mono">
                         {step.number}
@@ -398,7 +404,7 @@ export default function App() {
                     setSelectedProject(project);
                     setActiveGalleryIndex(0);
                   }}
-                  className="group relative bg-[#F9F8F6] rounded-2xl border border-[#F2EEE9] overflow-hidden flex flex-col md:flex-row cursor-pointer transition-all duration-300 hover:border-[#8B8B7A] hover:shadow-md"
+                  className="group relative bg-[#F9F8F6] rounded-2xl border border-[#F2EEE9] overflow-hidden flex flex-col md:flex-row cursor-pointer transition-all duration-300 hover:border-[#8B8B7A] hover:shadow-lg hover:-translate-y-1"
                 >
                   
                   {/* قسم الصورة الأيسر الفاخر */}
@@ -406,7 +412,7 @@ export default function App() {
                     <img
                       src={project.thumbnailUrl}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-[#2D2D2D]/10 group-hover:bg-transparent transition-all duration-300"></div>
@@ -522,7 +528,7 @@ export default function App() {
                   href={contactInfo.whatsapp.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-emerald-500 hover:shadow-xs transition-all duration-300 group text-right"
+                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-emerald-500 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group text-right"
                   id="whatsapp-bento-link"
                 >
                   <div className="flex items-center gap-4">
@@ -546,7 +552,7 @@ export default function App() {
                   href="https://linkedin.com/in/badranuxui"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-sky-600 hover:shadow-xs transition-all duration-300 group text-right"
+                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-sky-600 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group text-right"
                   id="linkedin-bento-link"
                 >
                   <div className="flex items-center gap-4">
@@ -568,7 +574,7 @@ export default function App() {
                   href="https://www.behance.net/badranuxui"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-blue-600 hover:shadow-xs transition-all duration-300 group text-right"
+                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-blue-600 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group text-right"
                   id="behance-bento-link"
                 >
                   <div className="flex items-center gap-4">
@@ -592,7 +598,7 @@ export default function App() {
                   href="https://x.com/badranuxui"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-[#1C1C17] hover:shadow-xs transition-all duration-300 group text-right"
+                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-[#1C1C17] hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group text-right"
                   id="twitter-bento-link"
                 >
                   <div className="flex items-center gap-4">
@@ -616,7 +622,7 @@ export default function App() {
                   href="https://instagram.com/badranuxui"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-pink-500 hover:shadow-xs transition-all duration-300 group text-right sm:col-span-2"
+                  className="bg-white p-6 rounded-[24px] border border-[#F2EEE9] flex items-center justify-between hover:border-pink-500 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group text-right sm:col-span-2"
                   id="instagram-bento-link"
                 >
                   <div className="flex items-center gap-4">
