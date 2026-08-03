@@ -1,10 +1,10 @@
 import { Project, StatItem, MethodologyStep } from "./types";
 
 // استيراد الصور التي تم إنشاؤها لضمان قيام Vite بتجميعها بشكل صحيح
-import avatarImg from "./assets/images/designer_avatar_1784119600442.jpg";
-import thumbImg from "./assets/images/project_thumbnail_1784119616505.jpg";
-import detail1Img from "./assets/images/project_detail_1_1784119632891.jpg";
-import detail2Img from "./assets/images/project_detail_2_1784119649213.jpg";
+import avatarImg from "./assets/images/designer_avatar.webp";
+import thumbImg from "./assets/images/project_thumbnail.webp";
+import detail1Img from "./assets/images/project_detail_1.webp";
+import detail2Img from "./assets/images/project_detail_2.webp";
 import tharwaThumbImg from "./assets/images/tharwa_thumbnail.webp";
 import tharwaDetail1Img from "./assets/images/tharwa_detail_1.webp";
 import tharwaDetail2Img from "./assets/images/tharwa_detail_2.webp";
