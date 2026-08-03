@@ -340,19 +340,28 @@ export default function App() {
           {/* قسم الإحصائيات السريعة بأسلوب فني ترابي فاخر ومحاذي تماماً - بعرض الصفحة بالكامل */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="quick-stats-grid">
             {statsData.map((stat, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
                 className="bg-white py-5 px-6 rounded-[24px] text-center border border-[#F2EEE9] shadow-sm transition-all duration-300 hover:border-[#8B8B7A] hover:scale-[1.02] active:border-[#8B8B7A] active:scale-[1.02] flex flex-col justify-center items-center gap-1"
               >
                 <div className="text-3xl font-black text-[#2D2D2D] tracking-tight">{stat.value}</div>
                 <div className="text-[11px] uppercase tracking-wider font-bold text-[#8B8B7A]">{stat.label}</div>
                 <div className="text-[11px] text-[#8B8B7A]/80 leading-relaxed font-light max-w-[220px]">{stat.sub}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* الجزء 1.5: منهجية العمل الاحترافية والمستوحاة من الفن البسيط */}
-          <div id="methodology" className="bg-white p-8 md:p-12 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col gap-8 text-right">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            id="methodology" className="bg-white p-8 md:p-12 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col gap-8 text-right">
             <div className="flex justify-between items-center border-b border-[#F2EEE9] pb-4">
               <h2 className="text-xs font-bold uppercase tracking-widest text-[#8B8B7A]">منهجية التصميم والعمل</h2>
               <span className="text-[10px] font-mono text-[#8B8B7A]/60">خطوات التصميم</span>
@@ -363,7 +372,13 @@ export default function App() {
               {methodologySteps.map((step, idx) => {
                 const IconComponent = iconMap[step.iconName] || Search;
                 return (
-                  <div key={idx} className="flex flex-col gap-4 group p-4 -m-4 rounded-2xl transition-all duration-300 hover:bg-[#FAF9F6] hover:-translate-y-1 active:bg-[#FAF9F6] active:-translate-y-1">
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                    className="flex flex-col gap-4 group p-4 -m-4 rounded-2xl transition-all duration-300 hover:bg-[#FAF9F6] hover:-translate-y-1 active:bg-[#FAF9F6] active:-translate-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-black italic text-[#8B8B7A] opacity-20 group-hover:opacity-60 transition-opacity font-mono">
                         {step.number}
@@ -376,14 +391,19 @@ export default function App() {
                     <p className="text-xs text-[#6B6B5E] opacity-90 leading-relaxed font-light">
                       {step.description}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
           {/* الجزء الثاني: شبكة المشاريع معرض الأعمال */}
-          <div id="portfolio" className="bg-white p-8 md:p-12 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col gap-8 md:gap-10 text-right">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            id="portfolio" className="bg-white p-8 md:p-12 rounded-[32px] border border-[#F2EEE9] shadow-sm flex flex-col gap-8 md:gap-10 text-right">
             
             <div className="flex justify-between items-end border-b border-[#F2EEE9] pb-4">
               <div>
@@ -397,9 +417,13 @@ export default function App() {
 
             {/* بطاقة عرض المشروع الواحد الحالية مع تعزيز التفاعل بالكامل وتماشيها مع التصميم الفني */}
             <div id="portfolio-container" className="space-y-10">
-              {projectsData.map((project) => (
-                <div
+              {projectsData.map((project, projIdx) => (
+                <motion.div
                   key={project.id}
+                  initial={{ opacity: 0, y: 36 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.6, delay: projIdx * 0.12, ease: "easeOut" }}
                   onClick={() => {
                     setSelectedProject(project);
                     setActiveGalleryIndex(0);
@@ -464,14 +488,19 @@ export default function App() {
 
                   </div>
 
-                </div>
+                </motion.div>
               ))}
             </div>
 
-          </div>
+          </motion.div>
 
           {/* الجزء الثالث: شبكة قنوات التواصل المباشرة الفخمة والمنظمة بأسلوب مدمج مريح للعين */}
-          <div id="contact" className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            id="contact" className="space-y-8">
             <div className="text-right pb-1">
               <span className="text-[10px] font-bold text-[#8B8B7A] uppercase tracking-widest block">دعنا نعمل معاً</span>
               <h2 className="text-2xl font-black text-[#2D2D2D]">تواصل معي مباشرة</h2>
@@ -480,7 +509,12 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch" id="contact-bento-grid">
               
               {/* بطاقة البريد الإلكتروني الكبيرة والمهيبة */}
-              <div className="col-span-1 lg:col-span-5 bg-white p-8 rounded-[32px] border border-[#F2EEE9] flex flex-col justify-between text-right shadow-xs group min-h-[260px]" id="email-bento-card">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="col-span-1 lg:col-span-5 bg-white p-8 rounded-[32px] border border-[#F2EEE9] flex flex-col justify-between text-right shadow-xs group min-h-[260px]" id="email-bento-card">
                 <div className="space-y-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#F5F2EE] text-[#2D2D2D] flex items-center justify-center transition-all duration-300 group-hover:bg-[#2D2D2D] group-hover:text-white">
                     <Mail size={22} />
@@ -518,13 +552,17 @@ export default function App() {
                     )}
                   </AnimatePresence>
                 </div>
-              </div>
+              </motion.div>
 
               {/* شبكة قنوات التواصل المباشرة الأخرى */}
               <div className="col-span-1 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4" id="social-bento-subgrid">
                 
                 {/* WhatsApp */}
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.0, ease: "easeOut" }}
                   href={contactInfo.whatsapp.link}
                   target="_blank"
                   rel="noreferrer"
@@ -545,10 +583,14 @@ export default function App() {
                     </div>
                   </div>
                   <ArrowLeft size={14} className="text-[#8B8B7A] opacity-40 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
-                </a>
+                </motion.a>
 
                 {/* LinkedIn */}
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
                   href="https://linkedin.com/in/badranuxui"
                   target="_blank"
                   rel="noreferrer"
@@ -567,10 +609,14 @@ export default function App() {
                     </div>
                   </div>
                   <ArrowLeft size={14} className="text-[#8B8B7A] opacity-40 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
-                </a>
+                </motion.a>
 
                 {/* Behance */}
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.16, ease: "easeOut" }}
                   href="https://www.behance.net/badranuxui"
                   target="_blank"
                   rel="noreferrer"
@@ -591,10 +637,14 @@ export default function App() {
                     </div>
                   </div>
                   <ArrowLeft size={14} className="text-[#8B8B7A] opacity-40 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
-                </a>
+                </motion.a>
 
                 {/* Twitter / X */}
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
                   href="https://x.com/badranuxui"
                   target="_blank"
                   rel="noreferrer"
@@ -615,10 +665,14 @@ export default function App() {
                     </div>
                   </div>
                   <ArrowLeft size={14} className="text-[#8B8B7A] opacity-40 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
-                </a>
+                </motion.a>
 
                 {/* Instagram */}
-                <a
+                <motion.a
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.32, ease: "easeOut" }}
                   href="https://instagram.com/badranuxui"
                   target="_blank"
                   rel="noreferrer"
@@ -637,11 +691,11 @@ export default function App() {
                     </div>
                   </div>
                   <ArrowLeft size={14} className="text-[#8B8B7A] opacity-40 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
-                </a>
+                </motion.a>
 
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </main>
