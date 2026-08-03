@@ -579,8 +579,8 @@ export default function App() {
                     </div>
                     <div>
                       <span className="text-[9px] uppercase tracking-wider font-bold text-[#8B8B7A] block">معرض أعمال بيهانس</span>
-                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5">
-                        badranuxui@
+                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5" dir="ltr">
+                        @badranuxui
                       </span>
                     </div>
                   </div>
@@ -603,7 +603,7 @@ export default function App() {
                     </div>
                     <div>
                       <span className="text-[9px] uppercase tracking-wider font-bold text-[#8B8B7A] block">منصة إكس / Twitter</span>
-                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5">
+                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5" dir="ltr">
                         @badranuxui
                       </span>
                     </div>
@@ -625,7 +625,7 @@ export default function App() {
                     </div>
                     <div>
                       <span className="text-[9px] uppercase tracking-wider font-bold text-[#8B8B7A] block">منصة إنستجرام</span>
-                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5">
+                      <span className="text-xs font-bold text-[#2D2D2D] block mt-0.5" dir="ltr">
                         @badranuxui
                       </span>
                     </div>
