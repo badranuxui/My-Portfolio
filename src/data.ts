@@ -5,6 +5,9 @@ import avatarImg from "./assets/images/designer_avatar_1784119600442.jpg";
 import thumbImg from "./assets/images/project_thumbnail_1784119616505.jpg";
 import detail1Img from "./assets/images/project_detail_1_1784119632891.jpg";
 import detail2Img from "./assets/images/project_detail_2_1784119649213.jpg";
+import tharwaThumbImg from "./assets/images/tharwa_thumbnail.webp";
+import tharwaDetail1Img from "./assets/images/tharwa_detail_1.webp";
+import tharwaDetail2Img from "./assets/images/tharwa_detail_2.webp";
 
 export const designerInfo = {
   name: "أحمد بدران",
@@ -28,7 +31,7 @@ export const statsData: StatItem[] = [
   },
   {
     label: "المشاريع المكتملة",
-    value: "1",
+    value: "2",
     sub: "جودة متناهية وصياغة متكاملة"
   }
 ];
@@ -78,6 +81,24 @@ export const projectsData: Project[] = [
     tags: ["تطبيق هاتف", "تصميم تجربة مستخدم UX/UI", "جماليات التيبوغرافيا", "بناء نماذج تفاعلية"],
     role: "مخطط تجربة ومصمم واجهات مستخدم (UX/UI Designer)",
     duration: "4 أسابيع (من البحث الأولي وحتى النموذج النهائي التفاعلي)"
+  },
+  {
+    id: "Tharwa-redesign",
+    title: "إعادة تصميم ثروة – Tharwa Redesign",
+    subtitle: "تجربة تعليمية تحوّل تعلّم الاستثمار في السوق السعودي لعادة يومية بسيطة وممتعة",
+    description: "إعادة تصميم كاملة لتطبيق يعلّم المستخدم أساسيات الاستثمار في السوق السعودي بأسلوب تفاعلي قائم على المهام اليومية ومسارات التعلم. اتجه التصميم الجديد لهوية بصرية داكنة عالية التباين مع لون فسفوري مميز يعكس جدية تطبيق مالي فعلي، مع إعادة بناء كل شاشة من الرئيسية والمستشار الذكي للسوق والمنافسة والملف الشخصي لتكون أوضح وأقل تشتيتاً.",
+    challenge: "كانت الهوية اللونية القديمة (البرتقالي) بعيدة عن إحساس الجدية والثقة اللي محتاجها تطبيق بيتكلم عن استثمار وفلوس حقيقية. مسار التعلم الدائري والبطاقات المتراصة كانت بتاخد مساحة بصرية كبيرة من غير ما تضيف وضوح فعلي، والأفاتار بحرف واحد بدل صورة حقيقية كانت بتقلل إحساس المنافسة الحقيقية بين المستخدمين.",
+    solution: "اتبنى التصميم الجديد على Dark mode كخط أساسي (زي أغلب تطبيقات الفاينانس) مع لون فسفوري واحد قوي كنقطة تركيز تدي إحساس Premium، وخط \"ثمانية\" كهوية بصرية سعودية. اتحول مسار التعلم لقائمة واضحة، اتبسطت شاشة المستشار الذكي لتتماشى مع أدوات AI المعروفة، اتضافت خانة بحث ومؤشرات +/- واضحة في السوق، واتجمعت أكتر من فكرة مرجعية في تصميم لوحة منافسة واحدة متماسكة مع صور حقيقية بدل الأفاتار.",
+    thumbnailUrl: tharwaThumbImg,
+    galleryImages: [
+      tharwaThumbImg,
+      tharwaDetail1Img,
+      tharwaDetail2Img
+    ],
+    behanceUrl: "https://www.behance.net/gallery/253685339/_",
+    tags: ["تطبيق هاتف", "إعادة تصميم UI/UX", "Fintech", "تعلّم تفاعلي (Gamification)"],
+    role: "مصمم UX/UI — إعادة تصميم كاملة للواجهات وتجربة المستخدم (UX/UI Designer — Redesign)",
+    duration: "3 أيام"
   }
 ];
 
