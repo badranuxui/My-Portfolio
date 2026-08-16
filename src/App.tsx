@@ -259,7 +259,7 @@ export default function App() {
                   {/* الاسم والمجال المهني */}
                   <div className="space-y-1">
                     <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#8B8B7A] block">أهلاً بك</span>
-                    <h1 className="text-3xl font-extrabold text-[#2D2D2D] leading-none">
+                    <h1 className="text-2xl font-extrabold text-[#2D2D2D] leading-none">
                       {designerInfo.name}
                     </h1>
                     <h2 className="text-sm font-semibold text-[#8B8B7A] uppercase tracking-wider font-mono">
