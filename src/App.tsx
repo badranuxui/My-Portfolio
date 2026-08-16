@@ -120,26 +120,23 @@ export default function App() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-[#2D2D2D] leading-none text-base group-hover:text-[#8B8B7A] transition-colors duration-300">
+              <span className="font-bold text-[#2D2D2D] leading-none text-base transition-colors duration-300">
                 {designerInfo.name}
               </span>
             </div>
           </a>
 
           {/* أزرار التنقل السريع للأجهزة المكتبية (Desktop Links) */}
-          <nav className="hidden md:flex items-center gap-10 text-sm font-medium opacity-70" id="desktop-nav">
-            <a href="#home" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">الرئيسية<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
-            <a href="#about" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">نبذة عني<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
-            <a href="#methodology" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">منهجية العمل<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
-            <a href="#portfolio" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">مشاريعي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
-            <a href="#contact" className="relative hover:text-[#8B8B7A] hover:opacity-100 transition-all duration-200 group/nav">تواصل معي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#8B8B7A] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+          <nav className="hidden md:flex items-center gap-10 text-sm font-medium" id="desktop-nav">
+            <a href="#home" className="relative text-[#8B8B7A] hover:text-[#2D2D2D] transition-colors duration-200 group/nav">الرئيسية<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#2D2D2D] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#about" className="relative text-[#8B8B7A] hover:text-[#2D2D2D] transition-colors duration-200 group/nav">نبذة عني<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#2D2D2D] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#methodology" className="relative text-[#8B8B7A] hover:text-[#2D2D2D] transition-colors duration-200 group/nav">منهجية العمل<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#2D2D2D] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#portfolio" className="relative text-[#8B8B7A] hover:text-[#2D2D2D] transition-colors duration-200 group/nav">مشاريعي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#2D2D2D] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
+            <a href="#contact" className="relative text-[#8B8B7A] hover:text-[#2D2D2D] transition-colors duration-200 group/nav">تواصل معي<span className="absolute -bottom-1 right-0 left-0 h-px bg-[#2D2D2D] scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-right"></span></a>
           </nav>
 
           {/* التسمية الفنية الجانبية والأجهزة المكتبية */}
           <div className="hidden lg:flex items-center gap-4">
-            <span className="text-[10px] font-mono text-[#8B8B7A] opacity-60 uppercase tracking-widest">
-              {contactInfo.username} // 2026
-            </span>
             <motion.a
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
