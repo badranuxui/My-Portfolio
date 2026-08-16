@@ -32,6 +32,12 @@ import {
 } from "./data";
 import { Project } from "./types";
 
+// دالة تحويل الأرقام الإنجليزية إلى أرقام عربية هندية للعرض في الواجهة
+const toArabicDigits = (input: string | number): string => {
+  const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+  return String(input).replace(/[0-9]/g, (d) => arabicDigits[parseInt(d, 10)]);
+};
+
 // مصفوفة أيقونات منهجية العمل لتسهيل عرضها برمجياً وتلقائياً
 const iconMap: Record<string, React.ComponentType<any>> = {
   Search,
@@ -345,7 +351,7 @@ export default function App() {
                 transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
                 className="bg-white py-5 px-6 rounded-[24px] text-center border border-[#F2EEE9] shadow-sm transition-all duration-300 hover:border-[#8B8B7A] hover:scale-[1.02] active:border-[#8B8B7A] active:scale-[1.02] flex flex-col justify-center items-center gap-1"
               >
-                <div className="text-3xl font-black text-[#2D2D2D] tracking-tight">{stat.value}</div>
+                <div className="text-3xl font-black text-[#2D2D2D] tracking-tight">{toArabicDigits(stat.value)}</div>
                 <div className="text-[11px] uppercase tracking-wider font-bold text-[#8B8B7A]">{stat.label}</div>
                 <div className="text-[11px] text-[#8B8B7A]/80 leading-relaxed font-light max-w-[220px]">{stat.sub}</div>
               </motion.div>
@@ -378,7 +384,7 @@ export default function App() {
                     className="flex flex-col gap-4 group p-4 -m-4 rounded-2xl transition-all duration-300 hover:bg-[#FAF9F6] hover:-translate-y-1 active:bg-[#FAF9F6] active:-translate-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-black italic text-[#8B8B7A] opacity-20 group-hover:opacity-60 transition-opacity font-mono">
-                        {step.number}
+                        {toArabicDigits(step.number)}
                       </span>
                       <div className="w-10 h-10 rounded-xl bg-[#F5F2EE] text-[#8B8B7A] flex items-center justify-center group-hover:bg-[#2D2D2D] group-hover:text-white transition-all duration-300">
                         <IconComponent size={18} />
@@ -468,7 +474,7 @@ export default function App() {
                       <div className="flex items-center gap-3 text-[10px] text-[#8B8B7A]">
                         <span className="flex items-center gap-1 font-mono">
                           <Clock size={12} />
-                          <span>{project.duration}</span>
+                          <span>{toArabicDigits(project.duration)}</span>
                         </span>
                         <span className="flex items-center gap-1">
                           <User size={12} />
@@ -519,7 +525,7 @@ export default function App() {
                   <div>
                     <h3 className="text-base font-bold text-[#2D2D2D]">البريد الإلكتروني المباشر</h3>
                     <p className="text-xs text-[#8B8B7A] leading-relaxed mt-1">
-                      أستقبل جميع عروض العمل والمشاريع الإبداعية عبر الإيميل، وسأرد عليك في غضون 24 ساعة.
+                      أستقبل جميع عروض العمل والمشاريع الإبداعية عبر الإيميل، وسأرد عليك في غضون ٢٤ ساعة.
                     </p>
                   </div>
                 </div>
@@ -575,7 +581,7 @@ export default function App() {
                     <div>
                       <span className="text-[9px] uppercase tracking-wider font-bold text-[#8B8B7A] block">واتساب مباشرة</span>
                       <span className="text-xs font-bold text-[#2D2D2D] tracking-tighter block font-mono mt-0.5" dir="ltr">
-                        {contactInfo.whatsapp.number}
+                        {toArabicDigits(contactInfo.whatsapp.number)}
                       </span>
                     </div>
                   </div>
@@ -706,7 +712,7 @@ export default function App() {
             <span>تصميم واجهات وتجربة المستخدم</span>
           </div>
           <div className="font-mono text-[10px] opacity-70">
-            2026 © جميع الحقوق محفوظة
+            ٢٠٢٦ © جميع الحقوق محفوظة
           </div>
         </div>
       </footer>
@@ -789,7 +795,7 @@ export default function App() {
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-[#2D2D2D]">مدة دورة العمل:</h4>
-                        <p className="text-xs text-[#6B6B5E] leading-normal font-light">{selectedProject.duration}</p>
+                        <p className="text-xs text-[#6B6B5E] leading-normal font-light">{toArabicDigits(selectedProject.duration)}</p>
                       </div>
                     </div>
                   </div>
@@ -809,7 +815,7 @@ export default function App() {
                       
                       {/* ترقيم الصور المكتوب */}
                       <div className="absolute bottom-4 left-4 bg-[#2D2D2D]/85 backdrop-blur-xs text-white text-xxs px-3 py-1.5 rounded-lg font-mono font-bold shadow-xs">
-                        {activeGalleryIndex + 1} / {selectedProject.galleryImages.length}
+                        {toArabicDigits(activeGalleryIndex + 1)} / {toArabicDigits(selectedProject.galleryImages.length)}
                       </div>
                     </div>
 
