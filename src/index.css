@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Thmanyah Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Thmanyah Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "Thmanyah Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Thmanyah Serif Text", system-ui, -apple-system, serif;
+  --font-display: "Thmanyah Serif Text", system-ui, -apple-system, serif;
+  --font-mono: "Thmanyah Serif Text", system-ui, -apple-system, serif;
   
   /* Artistic Flair themed palette */
   --color-sand-50: #FDFCFB;
