@@ -470,20 +470,20 @@ export default function App() {
                     </div>
 
                     {/* التذييل التفاعلي للبطاقة */}
-                    <div className="flex items-center justify-between pt-4 border-t border-[#F2EEE9]">
-                      <div className="flex items-center gap-3 text-[10px] text-[#8B8B7A]">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-4 border-t border-[#F2EEE9]">
+                      <div className="flex items-center gap-3 text-[10px] text-[#8B8B7A] flex-wrap">
                         <span className="flex items-center gap-1 font-mono">
-                          <Clock size={12} />
+                          <Clock size={12} className="shrink-0" />
                           <span>{toArabicDigits(project.duration)}</span>
                         </span>
                         <span className="flex items-center gap-1">
-                          <User size={12} />
+                          <User size={12} className="shrink-0" />
                           <span>مكتمل</span>
                         </span>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <button className="text-[11px] font-bold px-4 py-2 bg-white border border-[#EAE7E1] rounded-lg group-hover:bg-[#2D2D2D] group-hover:text-white transition-all cursor-pointer">
+                        <button className="w-full sm:w-auto text-[11px] font-bold px-4 py-2 bg-white border border-[#EAE7E1] rounded-lg group-hover:bg-[#2D2D2D] group-hover:text-white transition-all cursor-pointer whitespace-nowrap">
                           تصفح تفاصيل التصميم
                         </button>
                       </div>
@@ -530,14 +530,14 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center justify-between gap-3 bg-[#FAF9F6] p-3 rounded-2xl border border-[#F2EEE9] hover:border-[#8B8B7A] transition-all relative">
-                  <span className="text-xs font-mono text-[#2D2D2D] select-all font-bold" dir="ltr">
+                <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FAF9F6] p-3 rounded-2xl border border-[#F2EEE9] hover:border-[#8B8B7A] transition-all relative">
+                  <span className="text-xs font-mono text-[#2D2D2D] select-all font-bold break-all sm:break-normal" dir="ltr">
                     {contactInfo.email}
                   </span>
                   
                   <button
                     onClick={handleCopyEmail}
-                    className="text-[10px] font-bold bg-[#2D2D2D] text-white px-3 py-1.5 rounded-lg cursor-pointer hover:bg-[#8B8B7A] transition-all relative"
+                    className="text-[10px] font-bold bg-[#2D2D2D] text-white px-3 py-1.5 rounded-lg cursor-pointer hover:bg-[#8B8B7A] transition-all relative w-full sm:w-auto whitespace-nowrap shrink-0"
                   >
                     {copiedEmail ? "تم النسخ!" : "نسخ الإيميل"}
                   </button>
