@@ -147,6 +147,8 @@ export default function App() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               href={designerInfo.cvUrl}
+              target="_blank"
+              rel="noreferrer"
               className="px-5 py-2 text-xs font-semibold text-[#2D2D2D] border border-[#EAE7E1] rounded-xl hover:bg-[#F5F2EE] transition-colors duration-300 inline-flex items-center gap-1.5"
               id="nav-cv-button"
             >
@@ -216,6 +218,8 @@ export default function App() {
             <div className="pt-4 flex justify-center">
               <a
                 href={designerInfo.cvUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="w-full text-center py-3 bg-[#2D2D2D] text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
               >
                 <FileText size={16} />
@@ -279,6 +283,8 @@ export default function App() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
                     href={designerInfo.cvUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="bg-[#2D2D2D] text-white py-3 px-6 rounded-xl text-center text-xs font-semibold hover:bg-[#1C1C17] transition-colors duration-300 inline-flex items-center justify-center gap-2"
                   >
                     <FileText size={14} />
