@@ -881,16 +881,26 @@ export default function App() {
                       * للاطلاع على كافة النماذج السلوكية التفاعلية ومخططات خرائط تدفق المستخدم، يرجى التوجه لدراسة الحالة المفصلة على منصة Behance.
                     </p>
                     
-                    <a
-                      href={selectedProject.behanceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-6 py-3 bg-[#2D2D2D] hover:bg-[#1C1C17] text-white font-medium text-xs rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 cursor-pointer shadow-sm"
-                      id="visit-behance-button"
-                    >
-                      <LinkIcon size={14} />
-                      <span>دراسة الحالة كاملة على Behance</span>
-                    </a>
+                    {selectedProject.behanceUrl ? (
+                      <a
+                        href={selectedProject.behanceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-6 py-3 bg-[#2D2D2D] hover:bg-[#1C1C17] text-white font-medium text-xs rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 cursor-pointer shadow-sm"
+                        id="visit-behance-button"
+                      >
+                        <LinkIcon size={14} />
+                        <span>دراسة الحالة كاملة على Behance</span>
+                      </a>
+                    ) : (
+                      <span
+                        className="px-6 py-3 bg-[#F5F2EE] text-[#8B8B7A] font-medium text-xs rounded-xl inline-flex items-center justify-center gap-2 shadow-sm cursor-default whitespace-nowrap"
+                        id="behance-pending-label"
+                      >
+                        <Clock size={14} />
+                        <span>البريزنتيشن لسه قيد التجهيز</span>
+                      </span>
+                    )}
                   </div>
 
                 </div>
