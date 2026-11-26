@@ -120,7 +120,7 @@ export default function App() {
             <div className="w-10 h-10 bg-[#EAE7E1] rounded-full overflow-hidden border border-[#EAE7E1] transition-transform duration-300 group-hover:scale-105 shadow-xs grayscale contrast-110 flex items-center justify-center">
               <img
                 src={designerInfo.avatarUrl}
-                alt={designerInfo.name}
+                alt={`${designerInfo.name} - Ahmed Badran`}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -254,7 +254,7 @@ export default function App() {
                   <div className="w-24 h-24 rounded-2xl bg-[#EAE7E1] overflow-hidden grayscale contrast-125 border border-[#EAE7E1] shadow-xs relative">
                     <img
                       src={designerInfo.avatarUrl}
-                      alt={designerInfo.name}
+                      alt={`${designerInfo.name} - Ahmed Badran`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
