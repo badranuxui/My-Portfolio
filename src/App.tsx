@@ -30,6 +30,7 @@ import {
   projectsData,
   contactInfo
 } from "./data";
+import { SHOW_STATS } from "./config";
 import { Project } from "./types";
 
 // دالة تحويل الأرقام الإنجليزية إلى أرقام عربية هندية للعرض في الواجهة
@@ -347,22 +348,24 @@ export default function App() {
           </div>
 
           {/* قسم الإحصائيات السريعة بأسلوب فني ترابي فاخر ومحاذي تماماً - بعرض الصفحة بالكامل */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="quick-stats-grid">
-            {statsData.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                className="bg-white py-5 px-6 rounded-[24px] text-center border border-[#F2EEE9] shadow-sm transition-all duration-300 hover:border-[#8B8B7A] hover:scale-[1.02] active:border-[#8B8B7A] active:scale-[1.02] flex flex-col justify-center items-center gap-1"
-              >
-                <div className="text-3xl font-black text-[#2D2D2D] tracking-tight">{toArabicDigits(stat.value)}</div>
-                <div className="text-[11px] uppercase tracking-wider font-bold text-[#8B8B7A]">{stat.label}</div>
-                <div className="text-[11px] text-[#8B8B7A]/80 leading-relaxed font-light max-w-[220px]">{stat.sub}</div>
-              </motion.div>
-            ))}
-          </div>
+          {SHOW_STATS && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="quick-stats-grid">
+              {statsData.map((stat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                  className="bg-white py-5 px-6 rounded-[24px] text-center border border-[#F2EEE9] shadow-sm transition-all duration-300 hover:border-[#8B8B7A] hover:scale-[1.02] active:border-[#8B8B7A] active:scale-[1.02] flex flex-col justify-center items-center gap-1"
+                >
+                  <div className="text-3xl font-black text-[#2D2D2D] tracking-tight">{toArabicDigits(stat.value)}</div>
+                  <div className="text-[11px] uppercase tracking-wider font-bold text-[#8B8B7A]">{stat.label}</div>
+                  <div className="text-[11px] text-[#8B8B7A]/80 leading-relaxed font-light max-w-[220px]">{stat.sub}</div>
+                </motion.div>
+              ))}
+            </div>
+          )}
 
           {/* الجزء 1.5: منهجية العمل الاحترافية والمستوحاة من الفن البسيط */}
           <motion.div
